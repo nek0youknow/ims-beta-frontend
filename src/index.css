@@ -1,0 +1,277 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import '@fontsource/outfit/300.css';
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/500.css';
+@import '@fontsource/outfit/600.css';
+@import '@fontsource/outfit/700.css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Breul Grotesk B Light — drop licensed files into /public/fonts to activate */
+@font-face {
+  font-family: 'Breul Grotesk B';
+  src:
+    local('Breul Grotesk B Light'),
+    local('BreulGroteskB-Light'),
+    url('/fonts/BreulGroteskB-Light.woff2') format('woff2'),
+    url('/fonts/BreulGroteskB-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Breul Grotesk B';
+  src:
+    local('Breul Grotesk B Regular'),
+    local('BreulGroteskB-Regular'),
+    url('/fonts/BreulGroteskB-Regular.woff2') format('woff2'),
+    url('/fonts/BreulGroteskB-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Breul Grotesk B';
+  src:
+    local('Breul Grotesk B Medium'),
+    local('BreulGroteskB-Medium'),
+    url('/fonts/BreulGroteskB-Medium.woff2') format('woff2'),
+    url('/fonts/BreulGroteskB-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/D7WD5OXZFWQ5T76HSPWAC7MNKAJXE2YG/LUGNSPO5YC34ABNB2O6K7AFDSOJZT56V/WNDVG7O66ENLOD43GS7FBUCC4KMT5OM2.woff2')
+    format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2')
+    format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2')
+    format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --radius: 1.35rem;
+  --background: oklch(0.145 0.008 265);
+  --foreground: oklch(0.97 0.005 265);
+  --card: oklch(0.2 0.01 265 / 0.72);
+  --card-foreground: oklch(0.97 0.005 265);
+  --popover: oklch(0.2 0.01 265);
+  --popover-foreground: oklch(0.97 0.005 265);
+  --primary: oklch(0.68 0.22 8);
+  --primary-foreground: oklch(0.98 0.01 8);
+  --secondary: oklch(0.26 0.015 265);
+  --secondary-foreground: oklch(0.95 0.005 265);
+  --muted: oklch(0.24 0.012 265);
+  --muted-foreground: oklch(0.72 0.02 265);
+  --accent: oklch(0.62 0.19 255);
+  --accent-foreground: oklch(0.98 0.01 255);
+  --destructive: oklch(0.65 0.2 22);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.68 0.22 8);
+  --chart-1: oklch(0.68 0.22 8);
+  --chart-2: oklch(0.62 0.19 255);
+  --chart-3: oklch(0.72 0.15 155);
+  --chart-4: oklch(0.7 0.05 265);
+  --chart-5: oklch(0.75 0.16 70);
+  --sidebar: oklch(0.18 0.01 265);
+  --sidebar-foreground: oklch(0.97 0.005 265);
+  --sidebar-primary: oklch(0.68 0.22 8);
+  --sidebar-primary-foreground: oklch(0.98 0.01 8);
+  --sidebar-accent: oklch(0.26 0.015 265);
+  --sidebar-accent-foreground: oklch(0.97 0.005 265);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.68 0.22 8);
+  --glow-primary: oklch(0.68 0.22 8 / 0.2);
+  --glow-secondary: oklch(0.62 0.19 255 / 0.12);
+  --glow-blue: oklch(0.62 0.19 255);
+  --surface: oklch(0.18 0.01 265 / 0.85);
+  --surface-strong: oklch(0.22 0.012 265);
+}
+
+.dark {
+  --background: oklch(0.145 0.008 265);
+  --foreground: oklch(0.97 0.005 265);
+  --card: oklch(0.2 0.01 265 / 0.72);
+  --card-foreground: oklch(0.97 0.005 265);
+  --popover: oklch(0.2 0.01 265);
+  --popover-foreground: oklch(0.97 0.005 265);
+  --primary: oklch(0.68 0.22 8);
+  --primary-foreground: oklch(0.98 0.01 8);
+  --secondary: oklch(0.26 0.015 265);
+  --secondary-foreground: oklch(0.95 0.005 265);
+  --muted: oklch(0.24 0.012 265);
+  --muted-foreground: oklch(0.72 0.02 265);
+  --accent: oklch(0.62 0.19 255);
+  --accent-foreground: oklch(0.98 0.01 255);
+  --destructive: oklch(0.65 0.2 22);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.68 0.22 8);
+  --chart-1: oklch(0.68 0.22 8);
+  --chart-2: oklch(0.62 0.19 255);
+  --chart-3: oklch(0.72 0.15 155);
+  --chart-4: oklch(0.7 0.05 265);
+  --chart-5: oklch(0.75 0.16 70);
+  --sidebar: oklch(0.18 0.01 265);
+  --sidebar-foreground: oklch(0.97 0.005 265);
+  --sidebar-primary: oklch(0.68 0.22 8);
+  --sidebar-primary-foreground: oklch(0.98 0.01 8);
+  --sidebar-accent: oklch(0.26 0.015 265);
+  --sidebar-accent-foreground: oklch(0.97 0.005 265);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.68 0.22 8);
+  --glow-primary: oklch(0.68 0.22 8 / 0.2);
+  --glow-secondary: oklch(0.62 0.19 255 / 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) * 0.45);
+  --radius-md: calc(var(--radius) * 0.65);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.15);
+  --radius-2xl: calc(var(--radius) * 1.35);
+  --radius-3xl: calc(var(--radius) * 1.6);
+  --font-sans: 'Breul Grotesk B', 'Satoshi', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Breul Grotesk B', 'Satoshi', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply min-h-svh bg-background font-sans text-foreground antialiased;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    background-color: oklch(0.145 0.008 265);
+    background-image:
+      radial-gradient(ellipse 60% 45% at 10% -5%, var(--glow-primary), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 95% 5%, var(--glow-secondary), transparent 50%),
+      radial-gradient(ellipse 40% 30% at 50% 100%, oklch(0.3 0.04 265 / 0.35), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  #root {
+    @apply min-h-svh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply rounded-[1.75rem] border border-white/8 bg-white/[0.04] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-xl;
+  }
+
+  .glass-panel-strong {
+    @apply rounded-[1.75rem] border border-white/10 bg-white/[0.07] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] backdrop-blur-2xl;
+  }
+}
+
+@keyframes landing-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.landing-fade-up {
+  animation: landing-fade-up 700ms ease-out both;
+}
+
+.landing-fade-up-delay {
+  animation: landing-fade-up 700ms ease-out 120ms both;
+}
+
+@keyframes dash-draw {
+  from {
+    stroke-dashoffset: 800;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.chart-line {
+  stroke-dasharray: 800;
+  animation: dash-draw 1.4s ease-out forwards;
+}
